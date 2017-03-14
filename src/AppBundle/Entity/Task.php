@@ -8,9 +8,9 @@ use Doctrine\ORM\Mapping as ORM;
  * Tasks
  *
  * @ORM\Table(name="tasks")
- * @ORM\Entity(repositoryClass="AppBundle\Repository\TasksRepository")
+ * @ORM\Entity(repositoryClass="AppBundle\Repository\TaskRepository")
  */
-class Tasks
+class Task
 {
     /**
      * @var int

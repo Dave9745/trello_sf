@@ -2,10 +2,10 @@
 
 namespace AppBundle\Manager;
 
-use AppBundle\Entity\Tasks;
+use AppBundle\Entity\Task;
 
 
-class TasksManager{
+class TaskManager{
 
     private $entityManager;
     private $nbLast;
@@ -16,23 +16,23 @@ class TasksManager{
         $this->nbLast = $nbLast;
     }
 
-    public function createTweet()
+    public function createTask()
     {
-        new Tasks();
+        new Task();
     }
 
-    /*public function saveTask($task){
+    public function saveTask($task){
 
         $em = $this->entityManager;
         $em->persist($task);
         $em->flush();
 
-    }*/
+    }
 
 
-    public function getTasks(){
+    public function getTask(){
 
-        $tasks = $this->entityManager->getRepository(Tasks::class)->getAllTasks($this->nbLast);
+        $tasks = $this->entityManager->getRepository(Task::class)->getAllTask($this->nbLast);
 
         return $tasks;
 
