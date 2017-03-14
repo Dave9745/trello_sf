@@ -9,6 +9,11 @@ use AppBundle\Entity\Tasks;
 
 class TweetController extends Controller
 {
-    
+    /**
+     * @Route("/", name="app_tasks_list")
+     */
+     public function getTasks(){
+
+     }
 
 }

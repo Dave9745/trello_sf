@@ -10,4 +10,13 @@ namespace AppBundle\Repository;
  */
 class TasksRepository extends \Doctrine\ORM\EntityRepository
 {
+    public function getAllTasks($maxResults = 10){
+
+        return $this->createQueryBuilder('t')
+            ->select('t')
+            ->setMaxResults($maxResults)
+            ->getQuery()
+            ->getResult();
+
+    }
 }
