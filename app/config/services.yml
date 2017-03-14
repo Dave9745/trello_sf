@@ -4,3 +4,10 @@ services:
         arguments:
                - "@=service('doctrine').getManager()"
                - "%app.task.nb_last%"
+
+    app.category.manager:
+        class: AppBundle\Manager\CategoryManager
+        arguments:
+                - "@=service('doctrine').getManager()"
+                - "%app.category.nb_last%"
+

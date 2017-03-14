@@ -15,9 +15,12 @@ class TaskController extends Controller
      */
     public function indexAction()
     {
-        $tasks = $this->container->get('app.task.manager')->getTask();
+        $categories = $this->container->get('app.category.manager')->getCategory();
 
-        return $this->render('default/index.html.twig', ['tasks' => $tasks,]);
+
+
+        return $this->render('default/index.html.twig', [
+                                                         'categories' => $categories]);
 
     }
 

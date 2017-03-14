@@ -5,67 +5,25 @@
 {%  endblock %}
 
     {% block content %}
+        {% for category in categories %}
 
-        <div class="col-md-3">
-            <h2>À faire <span class="badge">1</span></h2>
-                {% for task in tasks %}
-                    {% if task.category == 'todo' %}
-                        <div class="panel panel-default">
-                            <div class="panel-body">
-                                {{ task.name }}
+            <div class="col-md-3">
+                <h2>{{ category.name }} <span class="badge">1</span></h2>
+                    {% for task in category.tasks %}
 
+                            <div class="panel panel-default">
+                                <div class="panel-body">
+                                    {{ task.name }}
+
+                                </div>
                             </div>
-                        </div>
-                    {% endif %}
-                {% else %}
-                    No tasks
-                {% endfor %}
-        </div>
-        <div class="col-md-3">
-            <h2>En cours <span class="badge">1</span></h2>
-            {% for task in tasks %}
-                {% if task.category == 'running' %}
-                    <div class="panel panel-default">
-                        <div class="panel-body">
-                            {{ task.name }}
 
-                        </div>
-                    </div>
-                {% endif %}
-            {% else %}
-                No tasks
-            {% endfor %}
-        </div>
-        <div class="col-md-3">
-            <h2>Terminées <span class="badge">1</span></h2>
-            {% for task in tasks %}
-                {% if task.category == 'done' %}
-                    <div class="panel panel-default">
-                        <div class="panel-body">
-                            {{ task.name }}
+                    {% else %}
+                        No tasks
+                    {% endfor %}
+            </div>
 
-                        </div>
-                    </div>
-                {% endif %}
-            {% else %}
-                No tasks
-            {% endfor %}
-        </div>
-        <div class="col-md-3">
-            <h2>Bugs/Retours <span class="badge">1</span></h2>
-            {% for task in tasks %}
-                {% if task.category == 'bugs' %}
-                    <div class="panel panel-default">
-                        <div class="panel-body">
-                            {{ task.name }}
-
-                        </div>
-                    </div>
-                {% endif %}
-            {% else %}
-                No tasks
-            {% endfor %}
-        </div>
+        {% endfor %}
 
     {% endblock %}
 

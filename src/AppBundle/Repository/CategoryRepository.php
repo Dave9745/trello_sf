@@ -10,4 +10,13 @@ namespace AppBundle\Repository;
  */
 class CategoryRepository extends \Doctrine\ORM\EntityRepository
 {
+    public function getAllCategories($maxResults = 10){
+
+        return $this->createQueryBuilder('t')
+            ->select('t')
+            ->setMaxResults($maxResults)
+            ->getQuery()
+            ->getResult();
+
+    }
 }
