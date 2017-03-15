@@ -11,7 +11,9 @@ use AppBundle\Entity\Category;
 
 class TaskController extends Controller
 {
-
+    /**
+     * @Route("/", name="homepage")
+     */
     public function indexAction()
     {
         $categories = $this->container->get('app.category.manager')->getCategory();
@@ -22,6 +24,9 @@ class TaskController extends Controller
 
     }
 
+    /**
+     * @Route("/newTask", name="app_new_task")
+     */
     public function addTaskAction(Request $request){
 
         $task = $this->container->get('app.task.manager')->createTask();
@@ -41,7 +46,9 @@ class TaskController extends Controller
         return $this->render(':task:newTask.html.twig', ['form' => $form->createView(),]);
     }
 
-
+    /**
+     * @Route("/task/{id}", name="app_task_edit")
+     */
     public function editAction(Request $request, $id)
     {
         $task     = $this->getDoctrine()->getRepository(Task::class)->getTask($id);
