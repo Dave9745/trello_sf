@@ -12,8 +12,7 @@
 
                             <div class="panel panel-default">
                                 <div class="panel-body">
-                                    {{ task.name }}
-
+                                    <a href="{{ path('app_task_edit', {id:task.id}) }}">{{ task.name }}</a><br/>
                                 </div>
                             </div>
 

@@ -19,4 +19,15 @@ class TaskRepository extends \Doctrine\ORM\EntityRepository
             ->getResult();
 
     }
+
+    public function getTask($id){
+
+        return $this->createQueryBuilder('i')
+            ->select('i')
+            ->andWhere('i.id = :id')
+            ->setParameter('id', $id)
+            ->getQuery()
+            ->getOneOrNullResult();
+
+    }
 }

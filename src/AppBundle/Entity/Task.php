@@ -4,6 +4,8 @@ namespace AppBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
 
+
+
 /**
  * Tasks
  *
@@ -12,6 +14,9 @@ use Doctrine\ORM\Mapping as ORM;
  */
 class Task
 {
+    const STATUS_OPENED = 'opened';
+    const STATUS_CLOSED = 'closed';
+
     /**
      * @var int
      *
